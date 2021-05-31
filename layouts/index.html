@@ -1,0 +1,10 @@
+{{ partial "head.html" . }}
+<body>
+	<div class="centered-container">
+		<div class="centered-inner">
+			<h1 class="site-title"><img alt="lockbox logo" src="/images/logo.svg" class="logo" />{{ .Site.Title }}</h1>
+			<h3 class="site-description">{{ .Site.Params.description }}</h3>
+		</div>
+	</div>
+</body>
+{{ partial "foot.html" . }}

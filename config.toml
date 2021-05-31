@@ -1,0 +1,6 @@
+baseurl = "https://lockbox.dev"
+pygmentsuseclasses = true
+title = "Lockbox"
+
+[params]
+description = "A customizable auth framework for Go."

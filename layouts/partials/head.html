@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		{{ $title := partial "title.html" . | chomp }}
+		<title>{{ $title }}</title>
+
+		<link rel="stylesheet" href="/css/normalize.css">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="stylesheet" href="/css/flexo.css">
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,500,700' rel='stylesheet' type='text/css'>
+
+		<meta name="title" content="{{ $title }}">
+		<link rel="canonical" href="{{ .URL | absURL }}">
+		<meta property="og:title" content="{{ $title }}"/>
+		<meta property="og:url" content="{{ .URL | absURL }}"/>
+		<!--<meta property="og:image" content="{{ print .Site.BaseURL "/images/" .Site.Params.logo }}"/>-->
+		<meta property="og:site_name" content="{{ .Site.Title }}">{{ if .Params.repo }}
+    <meta name="go-import" content="{{ replaceRE "https?://(.*)" "$1" .Site.BaseURL }}{{ .URL }} git https://github.com/lockboxauth/{{ .Params.repo }}">
+    <meta name="go-source" content="{{ replaceRE "https?://(.*)" "$1" .Site.BaseURL }}{{ .URL }} https://github.com/lockboxauth/{{ .Params.repo }}/ https://github.com/lockboxauth/{{ .Params.repo }}/tree/master{/dir} https://github.com/lockboxauth/{{ .Params.repo }}/blob/master{/dir}/{file}#L{line}">{{ end }}
+	</head>
